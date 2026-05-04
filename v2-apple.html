@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>方舟AI智庫 - Style B</title>
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family: -apple-system,'PingFang TC','Noto Sans TC',sans-serif; background:#fff; color:#1d1d1f; overflow-x:hidden; }
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 40px; height:52px;
+      background:rgba(255,255,255,0.85); backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(0,0,0,0.08);
+    }
+    .logo { font-size:17px; font-weight:700; color:#1d1d1f; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { font-size:13px; color:#555; text-decoration:none; }
+    .btn-apple { padding:7px 16px; background:#0071e3; color:#fff; border:none; border-radius:20px; font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; }
+
+    .hero {
+      min-height: 100vh;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:80px 24px;
+      background: linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
+    }
+    .hero-eyebrow { font-size:17px; color:#0071e3; font-weight:600; margin-bottom:12px; }
+    .hero h1 { font-size:clamp(40px,6vw,72px); font-weight:700; line-height:1.07; letter-spacing:-0.5px; color:#1d1d1f; margin-bottom:20px; }
+    .hero p { font-size:19px; color:#6e6e73; max-width:580px; margin:0 auto 40px; line-height:1.6; }
+    .hero-btns { display:flex; gap:16px; justify-content:center; }
+    .btn-xl-blue { padding:14px 28px; background:#0071e3; color:#fff; border:none; border-radius:24px; font-size:16px; font-weight:600; cursor:pointer; text-decoration:none; }
+    .btn-xl-blue:hover { background:#0077ed; }
+    .btn-xl-text { padding:14px 4px; color:#0071e3; font-size:16px; font-weight:600; text-decoration:none; }
+    .btn-xl-text::after { content:' ›'; }
+
+    .section { padding:80px 24px; text-align:center; }
+    .section-eyebrow { font-size:14px; color:#0071e3; font-weight:600; letter-spacing:0.5px; margin-bottom:8px; text-transform:uppercase; }
+    .section h2 { font-size:clamp(28px,4vw,52px); font-weight:700; letter-spacing:-0.3px; line-height:1.1; color:#1d1d1f; margin-bottom:12px; }
+    .section p.sub { font-size:17px; color:#6e6e73; max-width:540px; margin:0 auto 48px; }
+
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; max-width:960px; margin:0 auto; }
+    .card {
+      background:#fff; border-radius:18px; padding:36px 28px; text-align:left;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform:translateY(-4px); box-shadow:0 8px 32px rgba(0,0,0,0.1); }
+    .card-icon { font-size:32px; margin-bottom:16px; }
+    .card h3 { font-size:17px; font-weight:700; color:#1d1d1f; margin-bottom:8px; }
+    .card p { font-size:14px; color:#6e6e73; line-height:1.6; }
+
+    .grey-bg { background:#f5f5f7; }
+
+    .pricing-wrap { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:720px; margin:0 auto; text-align:left; }
+    .price-card { background:#fff; border-radius:18px; padding:36px 32px; box-shadow:0 2px 20px rgba(0,0,0,0.06); }
+    .price-card.featured { background:#1d1d1f; color:#fff; }
+    .price-label { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#6e6e73; margin-bottom:16px; }
+    .price-card.featured .price-label { color:rgba(255,255,255,0.5); }
+    .price-num { font-size:52px; font-weight:700; letter-spacing:-1px; margin-bottom:4px; }
+    .price-period { font-size:15px; color:#6e6e73; }
+    .price-card.featured .price-period { color:rgba(255,255,255,0.5); }
+    .price-note { font-size:13px; color:#0071e3; margin:8px 0 24px; }
+    .price-card.featured .price-note { color:#64c8ff; }
+    .price-list { font-size:14px; color:#6e6e73; line-height:2; margin-bottom:28px; }
+    .price-card.featured .price-list { color:rgba(255,255,255,0.6); }
+    .price-btn { display:block; text-align:center; padding:13px; border-radius:24px; font-size:15px; font-weight:600; text-decoration:none; }
+    .price-btn-blue { background:#0071e3; color:#fff; }
+    .price-btn-white { background:#fff; color:#1d1d1f; }
+
+    footer { padding:40px 24px; text-align:center; border-top:1px solid rgba(0,0,0,0.06); }
+    footer p { font-size:12px; color:#6e6e73; line-height:2; }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo">⚓ 方舟AI智庫</div>
+  <ul class="nav-links">
+    <li><a href="#">功能</a></li>
+    <li><a href="#">方案</a></li>
+    <li><a href="#">常見問題</a></li>
+  </ul>
+  <a href="#" class="btn-apple">立即加入</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">方舟AI智庫</p>
+  <h1>台股研究，<br/>清晰如此。</h1>
+  <p>由江老師主持的 AI 驅動台股研究社群。每日深度分析、即時訊號，讓投資決策更有把握。</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-xl-blue">立即訂閱</a>
+    <a href="#" class="btn-xl-text">了解更多</a>
+  </div>
+</div>
+
+<div class="section">
+  <p class="section-eyebrow">訂閱內容</p>
+  <h2>你需要的全都在這。</h2>
+  <p class="sub">從每日盤勢到深度報告，從即時訊號到 AI 工具，完整覆蓋你的投資需求。</p>
+  <div class="cards">
+    <div class="card"><div class="card-icon">🧠</div><h3>深度研究報告</h3><p>AI 硬體、CoWoS、矽光子等關鍵族群完整產業鏈分析。</p></div>
+    <div class="card"><div class="card-icon">📊</div><h3>每日盤勢解讀</h3><p>開盤前重點關注、收盤後覆盤，市場脈動一目瞭然。</p></div>
+    <div class="card"><div class="card-icon">⚡</div><h3>即時訊號通知</h3><p>法說重點、籌碼異動第一時間推播，不錯過關鍵機會。</p></div>
+    <div class="card"><div class="card-icon">🤖</div><h3>方舟 AI 助理</h3><p>隨時查詢個股資料、財報解讀與選股條件分析。</p></div>
+  </div>
+</div>
+
+<div class="section grey-bg">
+  <p class="section-eyebrow">訂閱方案</p>
+  <h2>簡單，透明。</h2>
+  <p class="sub">月費或年費，選一個適合你的方式開始。</p>
+  <div class="pricing-wrap">
+    <div class="price-card">
+      <p class="price-label">月費方案</p>
+      <div class="price-num">555</div>
+      <p class="price-period">每月</p>
+      <p class="price-note">彈性訂閱，隨時開始</p>
+      <p class="price-list">✓ 所有研究報告<br/>✓ 每日盤勢解讀<br/>✓ 即時訊號通知<br/>✓ AI 助理工具<br/>✓ 社群討論區</p>
+      <a href="#" class="price-btn price-btn-blue">訂閱月費</a>
+    </div>
+    <div class="price-card featured">
+      <p class="price-label">年費方案 ★</p>
+      <div class="price-num">5,999</div>
+      <p class="price-period">每年</p>
+      <p class="price-note">約每月 $500，省 $661</p>
+      <p class="price-list">✓ 所有研究報告<br/>✓ 每日盤勢解讀<br/>✓ 即時訊號通知<br/>✓ AI 助理工具<br/>✓ 社群討論區<br/>✓ 年度總回顧報告<br/>✓ 優先問答互動</p>
+      <a href="#" class="price-btn price-btn-white">訂閱年費</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 立德國際開發有限公司　統一編號：54780030<br/>arkaivault.com　聯絡：@marxchiang</p>
+</footer>
+</body>
+</html>
